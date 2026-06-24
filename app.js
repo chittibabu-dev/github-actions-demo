@@ -1,1 +1,1 @@
-console.log("Hello from GitHub Actions!");
+console.log("Hello " + process.env.MY_NAME);

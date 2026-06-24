@@ -1,10 +1,10 @@
-name: Node.js CI
+name: Secrets Demo
 
 on:
   push:
 
 jobs:
-  build:
+  demo:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,8 +16,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install Dependencies
-        run: npm install
-
       - name: Run Application
-        run: npm start
+        env:
+          MY_NAME: ${{ secrets.MY_NAME }}
+        run: node app.js
